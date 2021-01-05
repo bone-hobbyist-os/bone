@@ -18,11 +18,11 @@ Code organization in this repository:
 
 Todo:
 
- [ ] Set up full repository, with initial source code files
- [ ] Come up with the full design of how code is organized (directories, files). Partial details above.
- [ ] Get a build system working, have a version that builds
- [ ] Get a version that boots to kernel mode and initializes all structures
- [ ] Get a version that boots to userspace, and can load kernel-hardcoded executables
- [ ] Add support for ramfs/tmpfs
- [ ] Add support for initramfs (so that the initial tools can read and write from the file system)
- [ ] Define a basic service API and initial system call API
+* [ ] Set up full repository, with initial source code files
+* [ ] Come up with the full design of how code is organized (directories, files). Partial details above.
+* [ ] Get a build system working, have a version that builds
+* [ ] Get a version that boots to kernel mode and initializes all structures
+* [ ] Get a version that boots to userspace, and can load kernel-hardcoded executables
+* [ ] Add support for ramfs/tmpfs
+* [ ] Add support for initramfs (so that the initial tools can read and write from the file system)
+* [ ] Define a basic service API and initial system call API
