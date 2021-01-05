@@ -16,12 +16,24 @@ Code organization in this repository:
   * `/FS/Core` will contain core functionality common to all file systems, as well as the API itself.
   * `/FS/User` will contain functionality for implementing file systems in userspace, including API, plus some built in examples
 
+Structure of libraries:
+ * `Library.mod/` is the root directory of the library
+   * `Library.mod/Info.json` is a JSON containing all required information to load the module. The module loader subsystem parses this file to determine what else to do. Holds dependencies, main executable file, platforms and other information specific to the type of library.
+   * `Library.mod/ext_x86_32` is the actual library, in the raw executable format; file name is specified in `Info.json`
+     * TODO: Pick an executable format!
+   * Other files, dependent on the library
+ 
+Structure of applications:
+ * `Application.app/Info.json` contains all information pertaining to the aplication
+   * `Application.app/app_x86_64` is the actual application. File name specified in `Info.json`
+
 Todo:
 
 * [ ] Set up full repository, with initial source code files
 * [ ] Come up with the full design of how code is organized (directories, files). Partial details above.
 * [ ] Get a build system working, have a version that builds
 * [ ] Get a version that boots to kernel mode and initializes all structures
+* [ ] Choose an executable format for executables, libraries, kernel libraries
 * [ ] Get a version that boots to userspace, and can load kernel-hardcoded executables
 * [ ] Add support for ramfs/tmpfs
 * [ ] Add support for initramfs (so that the initial tools can read and write from the file system)
